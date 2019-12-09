@@ -14,7 +14,7 @@ public class OpenWeatherMap {
     @Id
     private String id;
 
-    @Indexed(unique = true)
+    @Indexed
     @Field("response_date")
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     private LocalDateTime responseDate;
