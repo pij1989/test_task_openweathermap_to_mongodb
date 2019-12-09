@@ -2,7 +2,7 @@
 
 This is application, which send request to OpenWeatherMap API, recieve response with data about weather in JSON format and save it in MongoDB database
 
-##Build
+## Build
 
 Clone project from Github repository https://github.com/pij1989/test_task_openweathermap_to_mongodb.
 Go to the project directory:
@@ -14,14 +14,14 @@ Perform command in command line:
 mvn package
 ```
 
-##Deploy
+## Deploy
 
 After building go to the target directory and launch the executable JAR file from the command line:
 ```
 java -jar test-task-openweathermap-to-mongodb-1.0-SNAPSHOT.jar
 ```
 
-##Configuration
+## Configuration
 
 Configuration files - application.properties and configuration.properties.
 For example:
