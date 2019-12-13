@@ -16,24 +16,21 @@ mvn package
 
 ## Deploy
 
-After building go to the target directory and launch the executable JAR file from the command line:
+After building launch the executable JAR file from the command line with specify the path to configuration file in system properties path.configure:
 ```
-java -jar test-task-openweathermap-to-mongodb-1.0-SNAPSHOT.jar
+java -jar -Dpath.configure=file:/path_to_file/configuration.properties test-task-openweathermap-to-mongodb-1.0-SNAPSHOT.jar
 ```
 
 ## Configuration
 
-Configuration files - application.properties and configuration.properties.
+Configuration file - configuration.properties.
 For example:
-* application.properties:
-```
-logging.file=logs/mylog.log
-spring.data.mongodb.uri=mongodb://localhost:27017/test
-```
+
 * configuration.properties:
 ```
 api.request.url=http://api.openweathermap.org/data/2.5/weather?q=Minsk,by&units=metric&APPID={APIKEY}
 api.key=d5304699f3bc41da25e68055e327278e
 schedule.cron=0/5 * * * * *
+mongodb.uri=mongodb://localhost:27017/test
 ```
 

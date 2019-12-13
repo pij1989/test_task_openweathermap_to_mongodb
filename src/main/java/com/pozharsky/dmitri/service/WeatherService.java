@@ -2,6 +2,7 @@ package com.pozharsky.dmitri.service;
 
 import com.pozharsky.dmitri.httpclient.WeatherHttpClient;
 import com.pozharsky.dmitri.pojo.OpenWeatherMap;
+import org.bson.Document;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +38,7 @@ public class WeatherService {
         logger.info("Response body: "+ responseBody);
         OpenWeatherMap weatherMap = new OpenWeatherMap();
         weatherMap.setResponseStatus(response.statusCode());
-        weatherMap.setResponseBody(response.body());
+        weatherMap.setResponseBody(Document.parse(responseBody));
         weatherMap.setResponseDate(parseResponseDate(responseDate));
         openWeatherMapService.saveOpenWeatherMap(weatherMap);
 
